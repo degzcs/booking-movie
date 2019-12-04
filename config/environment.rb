@@ -14,10 +14,9 @@ require APP_ROOT.join('app')
 Dir["#{ APP_ROOT }/lib/**/*.rb"].each { |file| require file }
 
 Figaro::Application.new(environment: ENV['RACK_ENV'], path: 'config/application.yml').load
-require 'sinatra/sequel'
-require 'sequel'
+require './config/database.rb'
 
-Authorization.configure do |config|
+BookingMovie.configure do |config|
   #config.autoload :Tenant, 'lib/models/tenant'
   config.set :root, APP_ROOT.to_path
   set :server, :puma
@@ -36,6 +35,7 @@ Authorization.configure do |config|
     require 'pry'
     register Sinatra::Reloader
     also_reload  APP_ROOT.join('lib/models')
+    also_reload  APP_ROOT.join('lib/middlewares')
     #after_reload { puts 'reloaded' }
   end
 

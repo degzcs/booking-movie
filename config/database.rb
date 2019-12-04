@@ -5,4 +5,4 @@ require 'sequel'
 # environment variable as the connection string:
 set :database, 'sqlite://foo.db'
 
-require 'db/migrations/*.rb'
+Dir["#{ APP_ROOT }/db/**/*.rb"].each { |file| require file }
