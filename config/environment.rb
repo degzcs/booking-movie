@@ -1,0 +1,46 @@
+require 'rubygems'
+require 'bundler/setup'
+#require './config/environment'
+require 'sinatra'
+require "sinatra/json"
+require 'sinatra/strong-params'
+require "sinatra/reloader"
+Bundler.require#(:default, ENV['RACK_ENV'])
+
+APP_ROOT = Pathname.new(File.expand_path('../../', __FILE__))
+APP_NAME = APP_ROOT.basename.to_s
+
+require APP_ROOT.join('app')
+Dir["#{ APP_ROOT }/lib/**/*.rb"].each { |file| require file }
+
+Figaro::Application.new(environment: ENV['RACK_ENV'], path: 'config/application.yml').load
+require 'sinatra/sequel'
+require 'sequel'
+
+Authorization.configure do |config|
+  #config.autoload :Tenant, 'lib/models/tenant'
+  config.set :root, APP_ROOT.to_path
+  set :server, :puma
+
+  enable :sessions
+	# Don't log them. We'll do that ourself
+	set :dump_errors, false
+
+	# Don't Captures any errors. Throw them up the stack
+	set :raise_errors, true
+
+	# Disable internal middleware for presenting errors
+	# as useful HTML pages
+	set :show_exceptions, false
+  configure :development do
+    require 'pry'
+    register Sinatra::Reloader
+    also_reload  APP_ROOT.join('lib/models')
+    #after_reload { puts 'reloaded' }
+  end
+
+  register Sinatra::StrongParams
+  #register Sinatra::ActiveRecordExtension
+  use ErrorsHandling
+end
+
