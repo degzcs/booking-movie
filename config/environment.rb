@@ -5,7 +5,8 @@ require 'sinatra'
 require "sinatra/json"
 require 'sinatra/strong-params'
 require "sinatra/reloader"
-Bundler.require#(:default, ENV['RACK_ENV'])
+ENV['RACK_ENV'] = 'development' if ENV['RACK_ENV'].nil?
+Bundler.require(:default, ENV['RACK_ENV'])
 
 APP_ROOT = Pathname.new(File.expand_path('../../', __FILE__))
 APP_NAME = APP_ROOT.basename.to_s
