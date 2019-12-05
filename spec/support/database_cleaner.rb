@@ -11,8 +11,6 @@ RSpec.configure do |config|
 
   # start the transaction strategy as examples are run
   config.around(:each) do |example|
-    # `rm -rf #{Rails.root}/public/uploads/document/file`
-    # `redis-cli flushall` #  TODO: add condition to call this method only when is called the workers
     DatabaseCleaner[:sequel].cleaning do
       example.run
     end
