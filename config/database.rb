@@ -6,3 +6,4 @@ require 'sequel'
 set :database, 'sqlite://foo.db'
 
 Dir["#{ APP_ROOT }/db/**/*.rb"].each { |file| require file }
+

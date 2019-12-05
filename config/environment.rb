@@ -9,12 +9,11 @@ Bundler.require#(:default, ENV['RACK_ENV'])
 
 APP_ROOT = Pathname.new(File.expand_path('../../', __FILE__))
 APP_NAME = APP_ROOT.basename.to_s
-
 require APP_ROOT.join('app')
-Dir["#{ APP_ROOT }/lib/**/*.rb"].each { |file| require file }
-
 Figaro::Application.new(environment: ENV['RACK_ENV'], path: 'config/application.yml').load
+
 require './config/database.rb'
+Dir["#{ APP_ROOT }/lib/**/*.rb"].each { |file| require file }
 
 BookingMovie.configure do |config|
   #config.autoload :Tenant, 'lib/models/tenant'
@@ -27,6 +26,9 @@ BookingMovie.configure do |config|
 
 	# Don't Captures any errors. Throw them up the stack
 	set :raise_errors, true
+
+  set :database, 'sqlite://foo.db'
+
 
 	# Disable internal middleware for presenting errors
 	# as useful HTML pages
@@ -43,4 +45,5 @@ BookingMovie.configure do |config|
   #register Sinatra::ActiveRecordExtension
   use ErrorsHandling
 end
+Dir["#{ APP_ROOT }/db/**/*.rb"].each { |file| require file }
 
