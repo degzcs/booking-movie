@@ -1,10 +1,7 @@
 source 'https://rubygems.org'
 
 gem 'sqlite3'
-gem 'sinatra', '~> 1.4'
-gem 'sinatra-contrib'
 gem 'sequel'
-gem 'sinatra-sequel'
 gem 'puma'
 gem 'figaro'
 gem 'grape'

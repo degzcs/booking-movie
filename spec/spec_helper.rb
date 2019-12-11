@@ -2,7 +2,6 @@ ENV['RACK_ENV'] = 'test'
 require ::File.expand_path('../../config/environment',  __FILE__)
 require_relative 'test_helper'
 require 'rspec'
-require 'rack/test'
 require 'pry'
 current_dir = Dir.pwd
 Dir["#{current_dir}/spec/support/**/*.rb"].each { |f| require f }

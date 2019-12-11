@@ -1,6 +1,6 @@
 RSpec.configure do |config|
 
-  before :suite do
+  config.before :suite do
     Sequel.connect(ENV.fetch('DATABASE_URL'))
   end
 
