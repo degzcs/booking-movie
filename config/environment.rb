@@ -3,7 +3,6 @@ require 'bundler/setup'
 #require './config/environment'
 require 'sinatra'
 require "sinatra/json"
-require 'sinatra/strong-params'
 require "sinatra/reloader"
 ENV['RACK_ENV'] = 'development' if ENV['RACK_ENV'].nil?
 Bundler.require(:default, ENV['RACK_ENV'])
@@ -42,8 +41,6 @@ BookingMovie.configure do |config|
     #after_reload { puts 'reloaded' }
   end
 
-  register Sinatra::StrongParams
-  #register Sinatra::ActiveRecordExtension
   use ErrorsHandling
 end
 Dir["#{ APP_ROOT }/db/**/*.rb"].each { |file| require file }
