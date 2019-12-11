@@ -1,6 +1,6 @@
 FactoryBot.define do
   factory :booking do
     date { Date.today }
-    movie_id { build(:movie).save.id }
+    cinema_show_id { build(:cinema_show).save.id }
   end
 end

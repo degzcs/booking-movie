@@ -4,7 +4,7 @@ class Movie < Sequel::Model
   # Associations
   #
 
-  one_to_many :bookings
+  one_to_many :cinema_shows
 
   #
   # Instance Methods
