@@ -4,6 +4,7 @@ require 'bundler/setup'
 require 'sinatra'
 require "sinatra/json"
 require "sinatra/reloader"
+require 'grape'
 ENV['RACK_ENV'] = 'development' if ENV['RACK_ENV'].nil?
 Bundler.require(:default, ENV['RACK_ENV'])
 
@@ -27,9 +28,6 @@ BookingMovie.configure do |config|
 	# Don't Captures any errors. Throw them up the stack
 	set :raise_errors, true
 
-  set :database, 'sqlite://foo.db'
-
-
 	# Disable internal middleware for presenting errors
 	# as useful HTML pages
 	set :show_exceptions, false
@@ -42,6 +40,7 @@ BookingMovie.configure do |config|
   end
 
   use ErrorsHandling
+  use Rack::Session::Cookie
 end
 Dir["#{ APP_ROOT }/db/**/*.rb"].each { |file| require file }
 
