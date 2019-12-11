@@ -15,10 +15,9 @@ group :development, :test do
   gem 'pry'
   gem 'pry-byebug'
   gem 'rspec'
-  gem 'factory_bot'
 end
 
 group :test do
-  gem 'database_cleaner'
+  gem 'factory_bot'
 end
 

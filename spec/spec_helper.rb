@@ -1,7 +1,6 @@
 ENV['RACK_ENV'] = 'test'
 require ::File.expand_path('../../config/environment',  __FILE__)
 require_relative 'test_helper'
-require 'database_cleaner'
 require 'rspec'
 require 'rack/test'
 require 'pry'
