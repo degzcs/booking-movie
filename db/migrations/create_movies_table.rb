@@ -5,7 +5,6 @@ migration "create movies table" do
     text        :description
     text        :url
     text        :image
-    text        :raw_booked_days
 
     index :id, :unique => true
   end
