@@ -9,7 +9,7 @@ class API < Grape::API
   resource :movies do
     desc 'List movies'
     params do
-      require :day, type: String, desc: 'lunes o martes'
+      requires :day, type: String, desc: 'lunes o martes'
     end
     get :by_day do
     end
@@ -25,8 +25,8 @@ class API < Grape::API
   resource :booking do
     desc 'List booking'
     params do
-      require :start_date, type: Date, desc: '2019-12-01'
-      require :end_date, type: Date, desc: '2019-12-05'
+      requires :start_date, type: Date, desc: '2019-12-01'
+      requires :end_date, type: Date, desc: '2019-12-05'
     end
     get :by_day do
     end
