@@ -5,6 +5,7 @@ gem 'sequel'
 gem 'puma'
 gem 'figaro'
 gem 'grape'
+gem 'dry-transaction'
 
 group :development, :test do
   gem 'awesome_print'
