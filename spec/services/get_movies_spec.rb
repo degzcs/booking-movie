@@ -4,8 +4,8 @@ describe GetMovies do
     @movie1 = build(:movie, days_for_booking: ['lunes','viernes']).save
     @movie2 = build(:movie, days_for_booking: ['martes','jueves']).save
     @movie3 = build(:movie, days_for_booking: ['lunes','miercoles','martes']).save
-
   end
+
   it 'should get a list of movies by day (monday)' do
     subject.call(day: 'lunes') do |result|
       result.success do |records|

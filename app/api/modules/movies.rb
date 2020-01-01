@@ -6,6 +6,13 @@ module Modules
         requires :day, type: String, desc: 'lunes o martes'
       end
       get :by_day do
+        service = GetMovies.new
+        service.call(params) do |result|
+          result.success do |records|
+            present records, with: Entities::Movie
+          end
+          result.failure {}
+        end
       end
 
       desc 'Create a Movie.'
