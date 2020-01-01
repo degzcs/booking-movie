@@ -16,4 +16,10 @@ describe "Create Movie", type: :controller do
     post 'api/movies', params
     expect(response_as_json).to eq params
   end
+
+  it 'should return the missing params' do
+    expected_response = 'name is missing, description is missing, url is missing, image is missing'
+    post 'api/movies', {}
+    expect(response_as_json[:error]).to eq expected_response
+  end
 end

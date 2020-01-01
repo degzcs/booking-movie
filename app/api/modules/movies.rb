@@ -11,6 +11,9 @@ module Modules
       desc 'Create a Movie.'
       params do
         requires :name, type: String, desc: 'Movie name.'
+        requires :description, type: String, desc: 'Short description about the movie'
+        requires :url, type: String, desc: 'http://someurl.here'
+        requires :image, type: String, desc: 'Base64 cover image'
       end
       post do
         service = CreateMovie.new
