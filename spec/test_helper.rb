@@ -1,9 +1,9 @@
 # encoding: UTF-8
 # frozen_string_literal: true
-#require 'rack/test'
+require 'rack/test'
 
 module TestHelper
-#  include Rack::Test::Methods
+  include Rack::Test::Methods
 
   def app
     API

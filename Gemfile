@@ -5,6 +5,7 @@ gem 'sequel'
 gem 'puma'
 gem 'figaro'
 gem 'grape'
+gem 'grape-entity'
 gem 'dry-transaction'
 
 group :development, :test do
@@ -16,5 +17,6 @@ end
 
 group :test do
   gem 'factory_bot'
+  gem 'rack-test'
 end
 
