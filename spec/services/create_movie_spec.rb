@@ -20,7 +20,9 @@ describe CreateMovie do
         expect(record.days_for_booking).to eq params[:days_for_booking]
       end
 
-      result.failure {}
+      result.failure do |message|
+        expect(message).to be nil
+      end
     end
   end
 
