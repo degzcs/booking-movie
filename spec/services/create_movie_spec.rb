@@ -4,7 +4,7 @@ describe CreateMovie do
       name: 'Interstellar',
       url: 'https://www.imdb.com/title/tt0816692/',
       image: 'someimagehere',
-      days_for_booking: ['lunes', 'martes'],
+      days_for_booking: ['monday', 'tuesday'],
       description: <<-DESC
       In Earth's future, a global crop blight and second Dust Bowl are slowly rendering the planet uninhabitable.
       Professor Brand (Michael Caine), a brilliant NASA physicist, is working on plans to save mankind by transporting Earth's
