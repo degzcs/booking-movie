@@ -2,4 +2,4 @@ development:
   DATABASE_URL: "sqlite://db/booking_movie_development.db"
 test:
   DATABASE_URL: "sqlite://db/booking_movie_test.db"
-  DATABASE_CLEANER_ALLOW_REMOTE_DATABASE_URL: true
+  DATABASE_CLEANER_ALLOW_REMOTE_DATABASE_URL: "true"
