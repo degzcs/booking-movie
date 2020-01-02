@@ -8,7 +8,7 @@ Rack app for booking movies.
 For creating new features or updating this project you can clone it and install the dependencies, as follows:
 
 ```bash
-$ git clone <url>
+$ git clone git@github.com:degzcs/booking-movie.git
 $ bundle install --without=production
 ```
 
