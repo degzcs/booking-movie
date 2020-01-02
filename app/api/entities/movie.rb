@@ -1,5 +1,6 @@
 module Entities
   class Movie < Grape::Entity
+    expose :id
     expose :name
     expose :description
     expose :url

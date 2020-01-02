@@ -14,7 +14,8 @@ describe "Create Movie", type: :controller do
     }
 
     post 'api/movies', params
-    expect(response_as_json).to eq params
+    res = remove_key(response_as_json, :id)
+    expect(res).to match params
   end
 
   it 'should return the missing params' do

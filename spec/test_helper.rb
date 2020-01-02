@@ -12,5 +12,13 @@ module TestHelper
   def response_as_json
     JSON.parse(last_response.body, :symbolize_names => true)
   end
+
+  def remove_key(object, key)
+    if object.is_a? Array
+      object.each { |r| r.delete(:id) }
+    else
+      object.tap { |r| r.delete(:id) }
+    end
+  end
 end
 

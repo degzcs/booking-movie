@@ -4,5 +4,8 @@ class Booking < Sequel::Model
   # Associations
   #
 
-  one_to_one :cinema_show
+  def cinema_show
+    CinemaShow.last(id: self.cinema_show_id)
+  end
 end
+

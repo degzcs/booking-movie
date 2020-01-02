@@ -43,11 +43,15 @@ class CreateBooking
   end
 
   def date_to_time(date)
-    Date.parse(date).to_time
+    date_from(date).to_time
   end
 
   def convert_date_to_day(date)
-    Date.parse(date).strftime('%A').downcase
+    date_from(date).strftime('%A').downcase
+  end
+
+  def date_from(date)
+    date.is_a?(Date) ? date : Date.parse(date)
   end
 end
 

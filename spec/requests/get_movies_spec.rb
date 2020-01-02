@@ -22,7 +22,8 @@ describe "Get Movies", type: :request do
       }
     ]
     get 'api/movies/by_day', day: 'monday'
-    expect(response_as_json).to match expected_response
+    res = remove_key(response_as_json, :id)
+    expect(res).to match expected_response
   end
 
   it 'should return an empty list' do
