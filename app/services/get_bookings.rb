@@ -20,7 +20,7 @@ class GetBokkings
   end
 
   def date_from(date)
-    date.is_a?(Time) ? date : Time.parse(date)
+    date.is_a?(Date) ? date : Date.parse(date)
   end
 end
 

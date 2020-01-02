@@ -11,14 +11,14 @@ describe "Create Booking", type: :request do
       date: date
     }
 
-    post "api/movies/#{movie.id}/booking", params
+    post "api/movies/#{movie.id}/bookings", params
     res = remove_key(response_as_json, :id)
     expect(res).to eq expected_response
   end
 
   it 'should return the missing params' do
     expected_response = 'date is missing'
-    post "api/movies/#{movie.id}/booking", {}
+    post "api/movies/#{movie.id}/bookings", {}
     expect(response_as_json[:error]).to eq expected_response
   end
 end
