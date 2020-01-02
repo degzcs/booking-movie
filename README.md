@@ -46,6 +46,6 @@ $ curl -d "date='2019-09-09'" -X POST https://booking-movies.herokuapp.com/api/m
 $ curl -d "start_date='2019-09-01'&end_date='2019-11-11'" -X GET https://booking-movies.herokuapp.com/api/bookings/by_dates
 ```
 
-### Contribuitors
+### Contributors
 - Diego Gomez
 
