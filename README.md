@@ -9,7 +9,7 @@ For creating new features or updating this project you can clone it and install 
 
 ```bash
 $ git clone <url>
-$ bundle install
+$ bundle install --without=production
 ```
 
 NOTE: make sure to have installed the 2.5.1 ruby version

@@ -1,14 +1,18 @@
 source 'https://rubygems.org'
 
-gem 'sqlite3'
 gem 'sequel'
 gem 'puma'
 gem 'figaro'
 gem 'grape'
-gem 'grape-entity'
 gem 'dry-transaction'
+gem 'grape-entity'
+
+group :production do
+  gem 'pg'
+end
 
 group :development, :test do
+  gem 'sqlite3'
   gem 'awesome_print'
   gem 'pry'
   gem 'pry-byebug'
