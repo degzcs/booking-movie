@@ -5,7 +5,7 @@ Rack app for booking movies.
 
 ### Development
 
-For creating new features or updating this project you can clone it and install the dependecies, as follows:
+For creating new features or updating this project you can clone it and install the dependencies, as follows:
 
 ```bash
 $ git clone <url>

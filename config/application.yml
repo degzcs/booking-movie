@@ -1,3 +1,5 @@
+production:
+  DATABASE_URL: "sqlite://db/booking_movie_production.db"
 development:
   DATABASE_URL: "sqlite://db/booking_movie_development.db"
 test:
