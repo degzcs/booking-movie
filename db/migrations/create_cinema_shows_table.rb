@@ -1,7 +1,7 @@
-DB.create_table! :cinema_shows do
+DB.create_table? :cinema_shows do
   primary_key :id
-  column :date, :datetime
-  column :movie_id, :integer
+  DateTime :date
+  Integer :movie_id
 
   index :id, :unique => true
 end

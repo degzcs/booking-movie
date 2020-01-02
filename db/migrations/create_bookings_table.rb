@@ -1,8 +1,8 @@
-DB.create_table! :bookings do
+DB.create_table? :bookings do
   primary_key :id
-  column :date, :datetime
+  DateTime :date
   column :canceled, :boolean, default: false
-  column :cinema_show_id, :integer
+  Integer :cinema_show_id
 
   index :id, :unique => true
 end

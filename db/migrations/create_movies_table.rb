@@ -1,4 +1,4 @@
-DB.create_table! :movies do
+DB.create_table? :movies do
   primary_key :id
   text        :name
   text        :description
