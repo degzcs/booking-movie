@@ -48,7 +48,7 @@ environment ENV.fetch("RACK_ENV") { "development" }
 root = "#{Dir.getwd}"
 
 bind "unix://#{root}/tmp/puma/socket"
-pidfile "#{root}/tmp/puma/pid"
+#pidfile "#{root}/tmp/puma/pid"
 state_path "#{root}/tmp/puma/state"
 rackup "#{root}/config.ru"
 
