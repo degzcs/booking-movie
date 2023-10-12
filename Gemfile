@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-ruby '2.7.7'
+ruby '3.1.0'
 
 gem 'sequel'
 gem 'puma'
