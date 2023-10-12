@@ -1,6 +1,7 @@
 require 'rubygems'
 require 'bundler/setup'
 require 'grape'
+require 'dry/monads/all'
 ENV['RACK_ENV'] = 'development' if ENV['RACK_ENV'].nil?
 Bundler.require(:default, ENV['RACK_ENV'])
 
