@@ -30,7 +30,11 @@ To run the specs exec this command:
 $ rspec spec
 ```
 
-### Examples
+### Production
+
+This demo was deployed in Render. Use this url: https://booking-movie.onrender.com/
+
+### Examples in Local
 
 ##### Create movie
 
